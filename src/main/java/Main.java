@@ -9,7 +9,7 @@ public class Main {
         Service bar = new Bar("Кола", 3);
         Service foodtruck = new FoodTruck("Хот-дог", 5);
         Service kulinariya = new Kulinariaya("Сосиска в тесте", 2);
-
+        caffe.cook("Паста");
 
         ArrayList<Service> services = new ArrayList<Service>();
         services.add(caffe);
