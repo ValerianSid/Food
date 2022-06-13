@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Bar extends FoodCompany implements Service{
 
-    ArrayList<String> menu = new ArrayList<>();
+    ArrayList<String> menu = new ArrayList<String>();
 
     public Bar(String name, int cost) {
         super(name, cost);

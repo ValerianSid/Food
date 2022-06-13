@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class FoodTruck extends FoodCompany implements Service{
 
-    ArrayList<String> menu = new ArrayList<>();
+    private List<String> menu;
     public FoodTruck(String name, int cost) {
         super(name, cost);
-
+        this.menu = new ArrayList<String>();
         menu.add("Хот-дог");
         menu.add("Шаурма");
         menu.add("Блин");
@@ -19,7 +20,7 @@ public class FoodTruck extends FoodCompany implements Service{
     }
 
     public void sell(String name, int cost) {
-        System.out.println("Продать " + name + "за " + cost);
+        System.out.println("Продать " + name + " " + "за " + cost);
 
     }
 }

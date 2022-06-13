@@ -10,6 +10,8 @@ public class Main {
         Service foodtruck = new FoodTruck("Хот-дог", 5);
         Service kulinariya = new Kulinariaya("Сосиска в тесте", 2);
         caffe.cook("Паста");
+        bar.cook("Kola");
+        foodtruck.sell("Хот-дог",5);
 
         ArrayList<Service> services = new ArrayList<Service>();
         services.add(caffe);
