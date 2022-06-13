@@ -13,7 +13,7 @@ public class Caffe extends FoodCompany implements Service {
         menu.add("Десерт");
     }
 
-    public void cook(String name) {
+    public void cook(String name) throws DishNotFoundException {
         if (menu.contains(name)) {
             System.out.println("Приготовить блюдо " + name);
         }
@@ -23,6 +23,7 @@ public class Caffe extends FoodCompany implements Service {
     }
 
     public void sell(String name, int cost) {
+
         System.out.println("Продать " + name + "за " + cost);
 
     }

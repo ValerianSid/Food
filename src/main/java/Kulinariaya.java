@@ -12,10 +12,11 @@ public class Kulinariaya extends FoodCompany implements Service {
         menu.add("Чебурек");
         menu.add("Пирожок");
     }
-    public void cook(String name) {
+    public void cook(String name)  {
         if (menu.contains(name)) {
             System.out.println("Завернуть" + name);
         }
+
         System.out.println("Такого блюда нет");
     }
 
