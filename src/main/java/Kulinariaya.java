@@ -21,17 +21,13 @@ public class Kulinariaya extends FoodCompany implements Service {
         }
     }
 
-    public void sell(String dishname, float cost) {
+    public void sell(String dishname, float cost) throws NotEnoughChangeException {
         if( cost - 4.75f > 1) {
-            System.out.println("Продать " + dishname + " " + "за " + cost);
+            System.out.println("Продать " + dishname + " " + "за " + 4.75f + " " + "сдача" + " " + (cost - 4.75f));
             cook(dishname);
         }
         else{
-            try {
                 throw new NotEnoughChangeException();
-            } catch (NotEnoughChangeException e) {
-                throw new RuntimeException(e);
-            }
         }
 
     }

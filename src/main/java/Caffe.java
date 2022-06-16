@@ -13,7 +13,7 @@ public class Caffe extends FoodCompany implements Service {
         menu.add("Десерт");
     }
 
-    public void cook(String dishname)  {
+    public void cook(String dishname) throws DishNotFoundException {
         if (this.menu.contains(dishname)) {
             System.out.println("Приготовить блюдо " + dishname);
         }
@@ -22,18 +22,15 @@ public class Caffe extends FoodCompany implements Service {
         }
     }
 
-    public void sell(String dishname, float cost) {
+    public void sell(String dishname, float cost) throws NotEnoughChangeException {
         if( cost - 4.75f > 1) {
             cook(dishname);
-            System.out.println("Продать " + dishname + " " + "за " + cost);
+            System.out.println("Продать " + dishname + " " + "за " + 4.75f + " " + "сдача" + " " + (cost - 4.75f));
 
         }
         else{
-            try {
-                throw new NotEnoughChangeException();
-            } catch (NotEnoughChangeException e) {
-                throw new RuntimeException(e);
+            throw new NotEnoughChangeException();
             }
         }
     }
-}
+

@@ -10,7 +10,7 @@ public class Main {
     public static final String BAR = "Бар";
     public static final String FOODTRUCK = "Фудтрак";
     public static final String KULINARIYA = "Кулинария";
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotEnoughChangeException {
 
         Service caffe = new Caffe(CAFFE);
         Service bar = new Bar(BAR);
