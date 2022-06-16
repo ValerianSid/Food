@@ -4,8 +4,8 @@ public class Caffe extends FoodCompany implements Service {
 
     ArrayList<String> menu = new ArrayList<String>();
 
-    public Caffe(String name, int cost) {
-        super(name, cost);
+    public Caffe(String name) {
+        super(name);
 
         menu.add("Паста");
         menu.add("Пицца");
@@ -13,18 +13,27 @@ public class Caffe extends FoodCompany implements Service {
         menu.add("Десерт");
     }
 
-    public void cook(String name) throws DishNotFoundException {
-        if (menu.contains(name)) {
-            System.out.println("Приготовить блюдо " + name);
+    public void cook(String dishname)  {
+        if (this.menu.contains(dishname)) {
+            System.out.println("Приготовить блюдо " + dishname);
         }
-        else {
-            System.out.println("Такого блюда нет");
+        else{
+            throw new DishNotFoundException();
         }
     }
 
-    public void sell(String name, int cost) {
+    public void sell(String dishname, float cost) {
+        if( cost - 4.75f > 1) {
+            cook(dishname);
+            System.out.println("Продать " + dishname + " " + "за " + cost);
 
-        System.out.println("Продать " + name + "за " + cost);
-
+        }
+        else{
+            try {
+                throw new NotEnoughChangeException();
+            } catch (NotEnoughChangeException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

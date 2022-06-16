@@ -1,10 +1,10 @@
 public class FoodCompany {
 
     private String name;
-    private int cost;
 
-    public FoodCompany(String name, int cost){
+
+    public FoodCompany(String name){
         this.name = name;
-        this.cost = cost;
+
     }
 }

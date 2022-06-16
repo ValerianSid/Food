@@ -4,23 +4,34 @@ import java.util.List;
 public class FoodTruck extends FoodCompany implements Service{
 
     private List<String> menu;
-    public FoodTruck(String name, int cost) {
-        super(name, cost);
+    public FoodTruck(String name) {
+        super(name);
         this.menu = new ArrayList<String>();
         menu.add("Хот-дог");
         menu.add("Шаурма");
         menu.add("Блин");
         menu.add("Пицца");
     }
-    public void cook(String name) {
-        if (menu.contains(name)) {
-            System.out.println("Быстро приготовить" + name);
+    public void cook(String dishname) {
+        if (this.menu.contains(dishname)) {
+            System.out.println("Быстро приготовить" + dishname);
         }
-        System.out.println("Такого блюда нет");
+        else{
+            throw new DishNotFoundException();
+        }
     }
 
-    public void sell(String name, int cost) {
-        System.out.println("Продать " + name + " " + "за " + cost);
-
+    public void sell(String dishname, float cost) {
+        if( cost - 4.75f > 1) {
+            System.out.println("Продать " + dishname + " " + "за " + cost);
+            cook(dishname);
+        }
+        else{
+            try {
+                throw new NotEnoughChangeException();
+            } catch (NotEnoughChangeException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

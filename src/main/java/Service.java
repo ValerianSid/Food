@@ -1,7 +1,7 @@
 public interface Service {
 
-    void cook(String name);
+    void cook(String dishname);
 
 
-    void sell(String name,int cost);
+    void sell(String dishname,float cost);
 }
