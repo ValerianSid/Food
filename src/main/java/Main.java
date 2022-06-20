@@ -17,7 +17,13 @@ public class Main {
         Service foodtruck = new FoodTruck(FOODTRUCK);
         Service kulinariya = new Kulinariaya(KULINARIYA);
 
-        switch (readLine("Введите название заведения")){
+        ArrayList<Service> services = new ArrayList<Service>();
+        services.add(caffe);
+        services.add(bar);
+        services.add(foodtruck);
+        services.add(kulinariya);
+
+        switch (readLine("Введите название заведения", services)){
             case CAFFE :
                 caffe.sell(readLine("Введите название блюда"),Float.parseFloat(readLine("Введите сумму")));
                 break;
@@ -33,15 +39,14 @@ public class Main {
         }
 
 
-        ArrayList<Service> services = new ArrayList<Service>();
-        services.add(caffe);
-        services.add(bar);
-        services.add(foodtruck);
-        services.add(kulinariya);
+
     }
 
-    public static String readLine(String text) {
+    public static String readLine(String text, ArrayList list) {
         System.out.println(text);
+        for (int i = 0; i < list.size(); i++){
+            System.out.println(list.get(i));
+        }
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = new String();
         try {

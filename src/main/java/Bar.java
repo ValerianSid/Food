@@ -12,7 +12,7 @@ public class Bar extends FoodCompany implements Service{
         menu.add("Водка");
         menu.add("Текила");
     }
-    public void cook(String dishname) {
+    public void cook(String dishname) throws DishNotFoundException {
         if (this.menu.contains(dishname)) {
             System.out.println("Приготовить напиток" + dishname);
         }

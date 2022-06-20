@@ -32,5 +32,9 @@ public class Caffe extends FoodCompany implements Service {
             throw new NotEnoughChangeException();
             }
         }
+
+    public ArrayList<String> getMenu() {
+        return menu;
     }
+}
 
